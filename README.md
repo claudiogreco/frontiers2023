@@ -23,6 +23,7 @@ python -m spacy download en_core_web_sm
 ```
 
 ## Data setup
+### Contexts
 1. Download the data (contexts and pre-trained models) from the following link:
 https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
 2. Place the downloaded "data" folder in the root directory of the repository.
@@ -30,6 +31,10 @@ https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sha
 N.B.:
 - All the generated contexts are contained in the file "data/2_unknown_2_known.json".
 - All the sampled contexts used for our experiments are included in the file "data/adaptation_2_unknown_2_known.json".
+
+### MS-COCO
+1. Run the command wget http://images.cocodataset.org/zips/val2014.zip
+2. Extract the images in the "val2014.zip" archive to the "data/preprocess/val2014" folder.
 
 ## Usage
 In order to run the communicative setup, run:

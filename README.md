@@ -13,8 +13,8 @@ The source code integrates two repositories:
 * https://github.com/hawkrobe/continual-adaptation: we used their listener architecture and context loader and we developed our scripts for the communicative setup between speaker and listener models starting from the scripts they wrote for their communicative setup between speaker/lister models and humans. 
 * https://github.com/reubenharry/Recurrent-RSA: we used their speaker model which implements Rational Speech Act (RSA) for the generation of pragmatic captions.
 
-## Setup
-1. Run the following commands:
+## Environment setup
+Run the following commands:
 ```
 virtualev venv -p python3
 source venv/bin/activate
@@ -22,13 +22,14 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
-2. Download the data (contexts and pre-trained models) from the link https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
-and place the downloaded "data" folder in the root directory of the repository.
+## Data setup
+1. Download the data (contexts and pre-trained models) from the following link:
+https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
+2. Place the downloaded "data" folder in the root directory of the repository.
 
-## Data
-All the generated contexts are contained in the file "data/2_unknown_2_known.json".
-
-All the sampled contexts used for our experiments are included in the file "data/adaptation_2_unknown_2_known.json".
+N.B.:
+- All the generated contexts are contained in the file "data/2_unknown_2_known.json".
+- All the sampled contexts used for our experiments are included in the file "data/adaptation_2_unknown_2_known.json".
 
 ## Usage
 In order to run the communicative setup, run:

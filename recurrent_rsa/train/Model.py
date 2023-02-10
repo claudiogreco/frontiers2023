@@ -13,11 +13,9 @@ class Model(torch.nn.Module):
 		
 		self.seg2idx,self.idx2seg=dictionaries
 		self.path=path
-		self.vocab_path='data/vocab.pkl'
-		self.encoder_path="data/preprocess/speaker/RSA/"+path+"-encoder-5-3000.pkl"
-		self.decoder_path="data/preprocess/speaker/RSA/"+path+"-decoder-5-3000.pkl"
+		self.encoder_path="data/models/speaker/RSA/"+path+"-encoder-5-3000.pkl"
+		self.decoder_path="data/models/speaker/RSA/"+path+"-decoder-5-3000.pkl"
 
-		#todo: change
 		embed_size=256
 		hidden_size=512
 		num_layers=1
@@ -30,8 +28,6 @@ class Model(torch.nn.Module):
 								 (0.229, 0.224, 0.225))])
 		
 		self.transform = transform
-		# Load vocabulary wrapper
-
 
 		# Build Models
 		self.encoder = EncoderCNN(embed_size)

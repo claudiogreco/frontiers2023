@@ -229,7 +229,7 @@ def main(args):
                     lengths=torch.LongTensor([captions.shape[1]])
                     out=decoder.forward(features, captions, lengths)
                     targets=pack_padded_sequence(
-                        captions, lengths, batch_first = True)[0]
+                        captions, lengths, batch_first=True)[0]
                     loss=criterion(out, targets)
                     decoder.zero_grad()
                     loss.backward()
@@ -266,76 +266,76 @@ if __name__ == "__main__":
     np.random.seed(0)
     torch.manual_seed(0)
 
-    parser=argparse.ArgumentParser()
+    parser = argparse.ArgumentParser()
     parser.add_argument(
         "--encoder_path",
-        type = str,
-        default = "data/preprocess/listener/total_listener_encoder-5-3000.pkl",
-        help = "path of the listener encoder"
+        type=str,
+        default="data/models/listener/total_listener_encoder-5-3000.pkl",
+        help="path of the listener encoder"
     )
     parser.add_argument(
         "--decoder_path",
-        type = str,
-        default = "data/preprocess/listener/total_listener_decoder-5-3000.pkl",
-        help = "path of the listener decoder"
+        type=str,
+        default="data/models/listener/total_listener_decoder-5-3000.pkl",
+        help="path of the listener decoder"
     )
     parser.add_argument(
         "--vocab_path",
-        type = str,
-        default = "data/preprocess/listener/vocab.pkl",
-        help = "path of the listener vocabulary"
+        type=str,
+        default="data/models/listener/vocab.pkl",
+        help="path of the listener vocabulary"
     )
     parser.add_argument(
         "--context_type",
-        type = str,
-        default = "adaptation_similar_random_contexts",
-        help = "type of the contexts"
+        type=str,
+        default="adaptation_similar_random_contexts",
+        help="type of the contexts"
     )
     parser.add_argument(
         "--sequential",
-        type = int,
-        default = True,
-        help = "specifies whether the contexts must be read sequentially"
+        type=int,
+        default=True,
+        help="specifies whether the contexts must be read sequentially"
     )
     parser.add_argument(
         "--context_size",
-        type = int,
-        default = 4,
-        help = "number of images to use for each context"
+        type=int,
+        default=4,
+        help="number of images to use for each context"
     )
     parser.add_argument(
         "--speaker_loss_type",
-        type = str,
-        default = "fixed",
-        help = "speaker adaptation method"
+        type=str,
+        default="fixed",
+        help="speaker adaptation method"
     )
     parser.add_argument(
         "--speaker_reset_after",
-        type = str,
-        default = "context",
-        help = "specifies whether to reset the speaker after each context or domain"
+        type=str,
+        default="context",
+        help="specifies whether to reset the speaker after each context or domain"
     )
     parser.add_argument(
         "--report_path",
-        type = str,
-        default = "report.csv",
-        help = "filename of the generated report"
+        type=str,
+        default="report.csv",
+        help="filename of the generated report"
     )
     parser.add_argument(
         "--debug",
-        action = "store_true",
-        help = "specifies whether to run in debug mode"
+        action="store_true",
+        help="specifies whether to run in debug mode"
     )
     parser.add_argument(
         "--num_repetitions",
-        type = int,
-        default = 11,
-        help = "number of repetitions per target"
+        type=int,
+        default=11,
+        help="number of repetitions per target"
     )
     parser.add_argument(
         "--learning_rate",
-        type = float,
-        default = 0.0003
+        type=float,
+        default=0.0003
     )
     args = parser.parse_args()
 

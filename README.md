@@ -35,6 +35,8 @@ N.B.:
 ### MS-COCO
 1. Run the command wget http://images.cocodataset.org/zips/val2014.zip
 2. Extract the images in the "val2014.zip" archive to the "data/preprocess/val2014" folder.
+3. Run the command wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
+4. Extract the annotations in the annotations_trainval2014.zip archive to the "data/preprocess/annotations" folder.
 
 ## Usage
 In order to run the communicative setup, run:

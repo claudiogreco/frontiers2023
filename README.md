@@ -24,8 +24,9 @@ python -m spacy download en_core_web_sm
 
 ## Usage
 In order to run the communicative setup, run:
-
-* python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> speaker_adaptation_to_model_listener_rsa.py: script to run the communicative setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
+```
+python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> speaker_adaptation_to_model_listener_rsa.py: script to run the communicative setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
+```
 
 where:
 - SPEAKER_LOSS:

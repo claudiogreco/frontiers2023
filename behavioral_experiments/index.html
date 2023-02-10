@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Reference game </title>
+    <!-- Load style sheet -->
+    <!-- Load jQuery, which lets us handle mouse events -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="dist/bundle.js"></script>
+    <link href="/lib/css/custom.css" media="screen" rel="stylesheet" type="text/css">
+
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        #messages li { padding: 5px 10px; }
+        /*#messages li:nth-child(odd) { background: #eee; }*/
+    </style>
+
+    </head>
+
+  <body>
+
+    <div id='header'>
+      <div id='textInfo'>
+	<h1 id='roleLabel'></h1> 
+	<p id='instructs'> </p>
+      </div>
+      <p style="color:white" id='feedback'> </p>
+      <p style="color:red" id='roundnumber'>Waiting room</p>
+      <p style="color:green" id='score'>total bonus: $0.00</p>
+    </div>
+
+    <div id='main' style="display:none">
+      <div id='message_panel'>
+        <ul id="messages">
+	</ul>
+	</p>
+        <hr>
+        <div id="chatarea">
+	  <form action="">
+            <input type="text" id="chatbox" autocomplete="off" />
+            <input type="submit" id="chatbutton" value="Send"></>
+	  </form>
+        </div>
+      </div>
+      <div id="object_grid"> </div>
+    </div>
+
+    <p id="waiting">
+  	  Waiting for another player...<br/>  
+	  Please do not refresh the page!<br /> 
+	  If wait exceeds 5 minutes, <br/>
+	  we recommend returning the HIT <br/>
+	  and trying again later.
+    </p>
+
+    <div id="exit_survey" style="display:none">
+      <br><br>
+      <p> Are you a native English speaker? </p>
+      <select class="exitSurveyDropdown">
+	<option value="language::noResponse"></option>
+	<option value="language::yes">Yes</option>
+	<option value="language::no">No</option>
+      </select>
+      <br><br>
+      <p> How would you describe your strategy in this experiment? </p>
+      <textarea id='strategy' rows="4" cols="50"></textarea>
+      <br><br>
+      <p> How would you describe your partner's behavior? </p>
+      <textarea id='partner_strategy' rows="4" cols="50"></textarea>
+      <br><br>
+      <p> How much did you like working with your partner? </p>
+      <select class="exitSurveyDropdown">
+        <option value="partner::noResponse"></option>
+        <option value="partner::not much">Not that much</option>
+        <option value="partner::okay">My partner was fine</option>
+        <option value="partner::liked">I liked working with my partner</option>
+        <option value="partner::loved">I loved working with my partner</option>
+      </select>
+      <br><br>
+
+      <p> Did you believe you were playing against another human? </p>
+      <select class="exitSurveyDropdown">
+      <option value="human::NoResponse"></option>
+      <option value="human::human">Yes, I thought they were a human</option>
+      <option value="human::program">No, I thought it was a computer program</option>
+      </select>
+      <br><br>
+      <p id='humanResult' style="display:none;color:red"> Thank you for your response! In this experiment your partner was an algorithm using artificial intelligence to learn how to talk to you!
+      </p>
+      <br> <br>
+	
+      <p> Did you read the instructions and do you think you did the
+	HIT correctly? </p>
+      <select class="exitSurveyDropdown">
+	<option value="didCorrectly::NoResponse"></option>
+	<option value="didCorrectly::yes">Yes</option>
+	<option value="didCorrectly::no">No</option>
+	<option value="didCorrectly::confused">I was confused</option>
+      </select>
+
+      <br><br>
+
+      <p> Did you notice any problems or have any other comments on the experiment? </p>
+      <textarea id='comments' rows="4" cols="50"></textarea>
+      <br>
+      <p> Clicking this button should automatically submit the HIT and close this tab. </p>
+      <div><button id="surveySubmit" type="button">Submit HIT</button></div>
+      <center><div style="display:none;width:70%;" id="button_error">
+	  <p>
+	    If you have clicked the button and nothing happened, you
+	    can use the code box that appeared on the mturk tab as
+	    a <b>backup method</b> to make sure you still get paid: just
+	    enter the code <strong>E2iZwi8d</strong> -- no need to contact us!
+	  </p>
+	  <p>
+	    If still experience a problem submitting with that method,
+	    please contact rxdh@stanford.edu for compensation.
+	  </p>
+	</div>
+  </body>
+</html>

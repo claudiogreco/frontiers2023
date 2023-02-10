@@ -1,0 +1,25 @@
+{
+  "email" : "rxdh@stanford.edu",
+  "projectName" : "hri-conventions",
+  "experimentName" : "MSCOCO-model-as-listener",
+  "iterationName" : "final-for-paper",
+  "anonymizeCSV" : true,
+  "bonusAmt" : 2, 
+  "dataStore" : ["csv", "mongo"],
+  "speakerType" : "human",
+  "listenerType" : "bot",
+  "contextType" : "hard",
+  "playerRoleNames" : {
+    "role1" : "speaker",
+    "role2" : "listener"
+  },
+  "numRounds" : 24,
+  "numHorizontalCells" : 4,
+  "numVerticalCells" : 1,
+  "cellDimensions" : {
+    "height" : 300,
+    "width" : 300
+  }, 
+  "cellPadding" : 0,
+  "delay" : 1500
+}

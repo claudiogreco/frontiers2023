@@ -1,0 +1,34 @@
+{
+  "name": "HCI-conventions",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "webpack --mode development ./src/client.js --output ./dist/bundle.js; node app.js --gameport 8887"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "colors": "^1.3.3",
+    "csv-parse": "~0.0.6",
+    "express": "^4.16.3",
+    "jsonfile": "~2.4.0",
+    "lodash": "^4.17.10",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "mongodb": "^2.2.35",
+    "request": "^2.87.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.2.0",
+    "uuid": "^3.3.2",
+    "webpack": "^4.28.3",
+    "xmldom": "^0.1.27"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.2.0"
+  }
+}

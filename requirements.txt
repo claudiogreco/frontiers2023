@@ -1,0 +1,13 @@
+torch
+torchvision
+numpy
+scipy
+Pillow
+nltk
+spacy
+keras
+tensorflow
+pycocotools
+symspellpy
+tqdm
+inflect

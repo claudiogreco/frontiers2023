@@ -10,7 +10,7 @@ We evaluate models based on Rational Speech Act (RSA), a likelihood loss, and a 
 
 ## Structure
 The source code integrates two repositories:
-* https://github.com/hawkrobe/continual-adaptation: we used their listener architecture and context loader and we developed our scripts for the communicative setup between speaker and listener models starting from the scripts they wrote for their communicative setup between speaker/lister models and humans. 
+* https://github.com/hawkrobe/continual-adaptation: we used their listener architecture and context loader and we developed our scripts for the interactive setup between speaker and listener models starting from the scripts they wrote for their interactive setup between speaker/lister models and humans. 
 * https://github.com/reubenharry/Recurrent-RSA: we used their speaker model which implements Rational Speech Act (RSA) for the generation of pragmatic captions.
 
 ## Environment setup
@@ -39,9 +39,10 @@ N.B.:
 4. Extract the annotations in the annotations_trainval2014.zip archive to the "data/preprocess/annotations" folder.
 
 ## Usage
-In order to run the communicative setup, run:
+## Comunicative setup
+In order to run the interactive setup, run:
 ```
-python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> --listener_encoder_path=<LISTENER_ENCODER_PATH> --listener_decoder_path=<LISTENER_DECODER_PATH> --report_path=<REPORT_PATH> speaker_adaptation_to_model_listener_rsa.py: script to run the communicative setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
+python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> --listener_encoder_path=<LISTENER_ENCODER_PATH> --listener_decoder_path=<LISTENER_DECODER_PATH> --report_path=<REPORT_PATH> speaker_adaptation_to_model_listener_rsa.py: script to run the interactive setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
 ```
 
 where:
@@ -61,7 +62,11 @@ where:
   - models/listener/expert_listener_decoder-5-3000.pkl to use the decoder of the expert listener
 - <REPORT_PATH>: path of the generated report.
 
+## Listener pre-training
 In order to generate the pre-training dataset for the listener starting from the contexts, run:
 ```
 python generate_pretraining_data_from_contexts.py
 ```
+
+In order to pre-train the listener from the generated pre-training dataset, follow the instructions reported at the following link:
+https://github.com/claudiogreco/frontiers2023/tree/main/image_captioning

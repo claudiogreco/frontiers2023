@@ -268,15 +268,15 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--encoder_path",
+        "--listener_encoder_path",
         type=str,
-        default="data/models/listener/total_listener_encoder-5-3000.pkl",
+        default="data/models/listener/partial_listener_encoder-5-2200.ckpt",
         help="path of the listener encoder"
     )
     parser.add_argument(
-        "--decoder_path",
+        "--listener_decoder_path",
         type=str,
-        default="data/models/listener/total_listener_decoder-5-3000.pkl",
+        default="data/models/listener/partial_listener_decoder-5-2200.ckpt",
         help="path of the listener decoder"
     )
     parser.add_argument(

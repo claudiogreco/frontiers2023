@@ -41,7 +41,7 @@ N.B.:
 ## Usage
 In order to run the communicative setup, run:
 ```
-python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> speaker_adaptation_to_model_listener_rsa.py: script to run the communicative setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
+python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> --listener_encoder_path=<LISTENER_ENCODER_PATH> --listener_decoder_path=<LISTENER_DECODER_PATH> --report_path=<REPORT_PATH> speaker_adaptation_to_model_listener_rsa.py: script to run the communicative setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
 ```
 
 where:
@@ -51,8 +51,15 @@ where:
   - rsa_likelihood: generates pragmatic captions incrementally keeping track of the wrong listener guesses and increases the likelihood of the generated caption if the listener guesses the correct target  (RSA-LH model in the paper).
   - rsa_likelihood_and_reset: generates pragmatic captions incrementally keeping track of the wrong listener guesses and resets the memory and increases the likelihood of the generated caption if the listener guesses the correct target (RSA-LH Reset model in the paper).
 - <SPEAKER_RESET_AFTER>:
-  -  context: reset after each context.
+  - context: reset after each context.
   - domain: reset after each domain.
+- <LISTENER_ENCODER_PATH>:
+  - models/listener/layman_listener_encoder-5-2200.ckpt to use the encoder of the layman listener
+  - models/listener/expert_listener_encoder-5-3000.pkl to use the encoder of the expert listener
+- <LISTENER_DECODER_PATH>:
+  - models/listener/layman_listener_decoder-5-2200.ckpt to use the decoder of the layman listener
+  - models/listener/expert_listener_decoder-5-3000.pkl to use the decoder of the expert listener
+- <REPORT_PATH>: path of the generated report.
 
 In order to generate the pre-training dataset for the listener starting from the contexts, run:
 ```

@@ -27,9 +27,9 @@ python -m spacy download en_core_web_sm
 https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
 2. Place the downloaded "data" folder in the root directory of the repository.
 3. Run the command wget http://images.cocodataset.org/zips/val2014.zip
-4. Extract the images in the "val2014.zip" archive to the "data/preprocess/val2014" folder.
+4. Extract the files in the "val2014.zip" archive to the "data/preprocess/val2014" folder.
 5. Run the command wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
-6. Extract the annotations in the annotations_trainval2014.zip archive to the "data/preprocess/annotations" folder.
+6. Extract the files in the "annotations_trainval2014.zip" archive to the "data/preprocess/annotations" folder.
 
 ### Contexts
 - The generated contexts are contained in the file "data/preprocess/2_unknown_2_known.json".

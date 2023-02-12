@@ -1,25 +1,23 @@
+from recurrent_rsa.rsa_utils.numpy_functions import (make_initial_prior,
+                                                     uniform_vector)
+from recurrent_rsa.recursion_schemes.recursion_schemes import ana_beam
 import sys
 sys.path.append("models/")
 
-import argparse
-import json
-import random
-import time
-from collections import defaultdict
-
-import context_loader
-import numpy as np
-import torch
-import torch.nn as nn
-import utils
-from custom_model import AdaptiveAgent
-from torch.nn.utils.rnn import pack_padded_sequence
-from utils import *
-
 from recurrent_rsa.bayesian_agents.joint_rsa import RSA
-from recurrent_rsa.recursion_schemes.recursion_schemes import ana_beam
-from recurrent_rsa.rsa_utils.numpy_functions import (make_initial_prior,
-                                                     uniform_vector)
+from utils import *
+from torch.nn.utils.rnn import pack_padded_sequence
+from custom_model import AdaptiveAgent
+import utils
+import torch.nn as nn
+import torch
+import numpy as np
+import context_loader
+from collections import defaultdict
+import time
+import random
+import json
+import argparse
 
 
 class EfficiencyWriter(Writer):
@@ -109,7 +107,8 @@ def main(args):
     for ctx_index, ctx in enumerate(grid):
         print(f"\nContext: {ctx_index + 1}/{len(grid)}")
 
-        print("Unknown label: {}".format(grid[ctx_index]["all_info"]["unknown_label"]))
+        print("Unknown label: {}".format(
+            grid[ctx_index]["all_info"]["unknown_label"]))
 
         if args.speaker_reset_after == "context":
             print("Resetting speaker...")
@@ -218,19 +217,20 @@ def main(args):
                 if ctx["speaker_loss"] in ["rsa_likelihood_reset", "rsa_likelihood", "likelihood"] and correct:
                     features = speaker_model.initial_speakers[0].features[0]
                     captions = torch.LongTensor(
-                            [
-                                speaker_model.initial_speakers[0].seg2idx[c]
-                                for c in pragmatic_caption[0][0]
-                            ]
-                        ).cuda()
-                    captions=captions.unsqueeze(0)
+                        [
+                            speaker_model.initial_speakers[0].seg2idx[c]
+                            for c in pragmatic_caption[0][0]
+                        ]
+                    ).cuda()
+                    captions = captions.unsqueeze(0)
                     print("Increasing likelihood..\n.")
-                    decoder=speaker_model.initial_speakers[0].decoder
-                    lengths=torch.LongTensor([captions.shape[1]])
-                    out=decoder.forward(features, captions, lengths)
-                    targets=pack_padded_sequence(
-                        captions, lengths, batch_first=True)[0]
-                    loss=criterion(out, targets)
+                    decoder = speaker_model.initial_speakers[0].decoder
+                    lengths = torch.LongTensor([captions.shape[1]])
+                    out = decoder.forward(features, captions, lengths)
+                    targets = pack_padded_sequence(
+                        captions, lengths, batch_first=True
+                    )[0]
+                    loss = criterion(out, targets)
                     decoder.zero_grad()
                     loss.backward()
                     optimizer.step()
@@ -238,7 +238,7 @@ def main(args):
                     if ctx["speaker_loss"] == "rsa_likelihood_reset":
                         print("Resetting memory...\n")
                         if len(interaction_memory[target_idx]) > 1:
-                            interaction_memory[target_idx]=[
+                            interaction_memory[target_idx] = [
                                 ctx["dirs"][target_idx]]
 
                 if "rsa" in ctx["speaker_loss"]:
@@ -250,8 +250,8 @@ def main(args):
                 ctx_accuracies[target.split("/")[-1]].append(correct)
                 ctx_lengths[target.split("/")[-1]].append(len(id_cap))
 
-        current_time=time.time()
-        elapsed_time=current_time - start_time
+        current_time = time.time()
+        elapsed_time = current_time - start_time
         time_left = args.num_samples * elapsed_time / \
             (ctx_index + 1) - elapsed_time
         print(f"Time left (minutes): {time_left / 60}")

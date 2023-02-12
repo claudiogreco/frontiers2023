@@ -11,3 +11,5 @@ pycocotools
 symspellpy
 tqdm
 inflect
+pandas
+streamlit

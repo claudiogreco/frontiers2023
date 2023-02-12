@@ -23,28 +23,33 @@ python -m spacy download en_core_web_sm
 ```
 
 ## Data setup
-### Contexts
-1. Download the data (contexts and pre-trained models) from the following link:
+1. Download the data (contexts, listener pre-training data, and pre-trained models) from the following link:
 https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
 2. Place the downloaded "data" folder in the root directory of the repository.
+3. Run the command wget http://images.cocodataset.org/zips/val2014.zip
+4. Extract the images in the "val2014.zip" archive to the "data/preprocess/val2014" folder.
+5. Run the command wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
+6. Extract the annotations in the annotations_trainval2014.zip archive to the "data/preprocess/annotations" folder.
 
-N.B.:
-- All the generated contexts are contained in the file "data/2_unknown_2_known.json".
-- All the sampled contexts used for our experiments are included in the file "data/adaptation_2_unknown_2_known.json".
+### Contexts
+- The generated contexts are contained in the file "data/preprocess/2_unknown_2_known.json".
+- The sampled contexts used for our experiments are contained in the file "data/preprocess/adaptation_2_unknown_2_known.json".
 
-### MS-COCO
-1. Run the command wget http://images.cocodataset.org/zips/val2014.zip
-2. Extract the images in the "val2014.zip" archive to the "data/preprocess/val2014" folder.
-3. Run the command wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
-4. Extract the annotations in the annotations_trainval2014.zip archive to the "data/preprocess/annotations" folder.
+### Reports
+The generated reports showing the speaker adaptation during the interaction with the expert and layman listeners are contained in the folder "data/reports".
+
+### Pre-trained models
+The pre-trained speaker and listener models are contained in the folders "data/models/speaker" and "data/models/listener", respectively.
+
+### Pre-training data
+The data used to pre-train the layman listener is contained in the file "data/preprocess/captions_train2014_wrt_2_unknown_2_known.json".
 
 ## Usage
-## Comunicative setup
+### Interactive setup
 In order to run the interactive setup, run:
 ```
 python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> --listener_encoder_path=<LISTENER_ENCODER_PATH> --listener_decoder_path=<LISTENER_DECODER_PATH> --report_path=<REPORT_PATH> speaker_adaptation_to_model_listener_rsa.py: script to run the interactive setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
 ```
-
 where:
 - <SPEAKER_LOSS>:
   - fixed: no adaptation (Fixed model in the paper).
@@ -62,7 +67,13 @@ where:
   - models/listener/expert_listener_decoder-5-3000.pkl to use the decoder of the expert listener
 - <REPORT_PATH>: path of the generated report.
 
-## Listener pre-training
+### Visualization of speaker adaptation
+In order to visualize the speaker adaptation during the different interactions, run:
+```
+streamlit run visualize_interactions.py
+```
+
+### Listener pre-training
 In order to generate the pre-training dataset for the listener starting from the contexts, run:
 ```
 python generate_pretraining_data_from_contexts.py

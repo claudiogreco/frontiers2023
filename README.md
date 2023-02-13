@@ -28,15 +28,15 @@ Execute the following instructions:
 
 1. Download the data (contexts, listener pre-training data, and pre-trained models) from the following link:
 https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
-2. Place the downloaded "data" folder in the root directory of the repository.
+2. Place the downloaded "data" folder in the root directory of the repository
 3. Run the command wget http://images.cocodataset.org/zips/val2014.zip
-4. Extract the files in the "val2014.zip" archive to the "data/preprocess/val2014" folder.
+4. Extract the files in the "val2014.zip" archive to the "data/preprocess/val2014" folder
 5. Run the command wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
-6. Extract the files in the "annotations_trainval2014.zip" archive to the "data/preprocess/annotations" folder.
+6. Extract the files in the "annotations_trainval2014.zip" archive to the "data/preprocess/annotations" folder
 
 ### Contexts
-- The generated contexts are contained in the file "data/preprocess/2_unknown_2_known.json".
-- The sampled contexts used for our experiments are contained in the file "data/preprocess/adaptation_2_unknown_2_known.json".
+- The generated contexts are contained in the file "data/preprocess/2_unknown_2_known.json"
+- The sampled contexts used for our experiments are contained in the file "data/preprocess/adaptation_2_unknown_2_known.json"
 
 ### Reports
 The generated reports showing the speaker adaptation during the interaction with the expert and layman listeners are contained in the folder "data/reports".
@@ -76,6 +76,11 @@ In order to visualize the speaker adaptation during the different interactions, 
 streamlit run visualize_interactions.py
 ```
 The app will run a local HTTP server showing an interface to visualize the reports contained in "data/reports".
+
+### Context generation
+In order to generate the contexts, execute the following instructions:
+1. Run the "data/preprocess/extract_features.py" script
+2. Run the "generate_contexts.py" script
 
 ### Listener pre-training
 In order to generate the pre-training dataset for the listener starting from the contexts, run:

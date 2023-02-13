@@ -13,3 +13,4 @@ tqdm
 inflect
 pandas
 streamlit
+scikit-learn

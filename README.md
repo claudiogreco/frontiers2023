@@ -24,6 +24,8 @@ python -m spacy download en_core_web_sm
 ```
 
 ## Data setup
+Execute the following instructions:
+
 1. Download the data (contexts, listener pre-training data, and pre-trained models) from the following link:
 https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
 2. Place the downloaded "data" folder in the root directory of the repository.

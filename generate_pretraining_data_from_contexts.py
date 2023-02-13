@@ -25,7 +25,7 @@ if __name__ == "__main__":
     for contexts_unknowns in [contexts_unknowns]: # , contexts2_unknowns, contexts3_unknowns, contexts4_unknowns]:
         removed_categories_names = removed_categories_names.union(contexts_unknowns)
 
-    with open("data/annotations/instances_train2014.json") as in_file:
+    with open("data/preprocess/annotations/instances_train2014.json") as in_file:
         instances = json.load(in_file)
 
     image_id2image_objects = defaultdict(set)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     category_name2category_id = {x["name"]: x["id"] for x in instances["categories"]}
     category_id2category_name = {v: k for k, v in category_name2category_id.items()}
 
-    with open("data/annotations/captions_train2014.json") as in_file:
+    with open("data/preprocess/annotations/captions_train2014.json") as in_file:
         captions = json.load(in_file)
 
     image_id2captions = defaultdict(list)

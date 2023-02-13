@@ -10,7 +10,7 @@ We evaluate models based on Rational Speech Act (RSA), a likelihood loss, and a 
 
 ## Structure
 The source code integrates two repositories:
-* https://github.com/hawkrobe/continual-adaptation: we used their listener architecture and context loader and we developed our scripts for the interactive setup between speaker and listener models starting from the scripts they wrote for their interactive setup between speaker/lister models and humans. 
+* https://github.com/hawkrobe/continual-adaptation: we used their listener architecture and context loader and we developed our scripts for the interactive setup between speaker and listener models starting from the scripts they wrote for their interactive setup between speaker/lister models and humans.
 * https://github.com/reubenharry/Recurrent-RSA: we used their speaker model which implements Rational Speech Act (RSA) for the generation of pragmatic captions.
 
 ## Environment setup

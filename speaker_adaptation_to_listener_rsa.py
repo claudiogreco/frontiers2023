@@ -12,7 +12,7 @@ import utils
 import torch.nn as nn
 import torch
 import numpy as np
-import context_loader
+import custom_context_loader
 from collections import defaultdict
 import time
 import random
@@ -49,7 +49,7 @@ class EfficiencyWriter(Writer):
 
 
 def get_context_loader(context_info):
-    return context_loader.get_context_loader(
+    return custom_context_loader.get_context_loader(
         ctx_type=context_info["context_type"],
         ctx_size=context_info["context_size"],
         num_samples=context_info["num_samples"],

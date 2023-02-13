@@ -270,13 +270,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--listener_encoder_path",
         type=str,
-        default="data/models/listener/partial_listener_encoder-5-2200.ckpt",
+        default="data/models/listener/layman_listener_encoder-5-2200.ckpt",
         help="path of the listener encoder"
     )
     parser.add_argument(
         "--listener_decoder_path",
         type=str,
-        default="data/models/listener/partial_listener_decoder-5-2200.ckpt",
+        default="data/models/listener/layman_listener_decoder-5-2200.ckpt",
         help="path of the listener decoder"
     )
     parser.add_argument(

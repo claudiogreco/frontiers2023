@@ -84,4 +84,4 @@ python generate_pretraining_data_from_contexts.py
 ```
 
 In order to pre-train the listener from the generated pre-training dataset, follow the instructions reported at the following link:
-https://github.com/claudiogreco/frontiers2023/tree/main/image_captioning
+https://github.com/claudiogreco/frontiers2023/tree/main/image_captioning.

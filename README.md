@@ -10,8 +10,9 @@ We evaluate models based on Rational Speech Act (RSA), a likelihood loss, and a 
 
 ## Structure
 The source code integrates two repositories:
-* https://github.com/hawkrobe/continual-adaptation: we used their listener architecture and context loader and we developed our scripts for the interactive setup between speaker and listener models starting from the scripts they wrote for their interactive setup between speaker/lister models and humans.
-* https://github.com/reubenharry/Recurrent-RSA: we used their speaker model which implements Rational Speech Act (RSA) for the generation of pragmatic captions.
+* https://github.com/hawkrobe/continual-adaptation: we used their listener architecture and context loader and we developed our scripts for the interactive setup between speaker and listener models starting from the scripts they wrote for their interactive setup between speaker/lister models and humans. The "models" folder in our repository includes files from the "models" folder in their repository. The files we edited from their repository show the "custom_" prefix in their name.
+* https://github.com/yunjey/pytorch-tutorial/tree/master/tutorials/03-advanced/image_captioning: in order to train the listener architecture with our pre-training dataset, we used their training code. The files from their repository are in "image_captioning". We also used the model pre-trained by them on MS-COCO for our expert listener (composed of a pre-trained encoder and decoder, whose weights are stored in the files "data/models/listener/total_listener_encoder-5-3000.pkl" and "data/models/listener/total_listener_decoder-5-3000.pkl", respectively.
+* https://github.com/reubenharry/Recurrent-RSA: we used their speaker model which implements Rational Speech Act (RSA) for the generation of pragmatic captions. The files from their repository are in "bayesian_agents" and "recurrent_rsa".
 
 ## Environment setup
 Run the following commands:

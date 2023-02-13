@@ -75,6 +75,7 @@ In order to visualize the speaker adaptation during the different interactions, 
 ```
 streamlit run visualize_interactions.py
 ```
+The app will run a local HTTP server showing an interface to visualize the reports contained in "data/reports".
 
 ### Listener pre-training
 In order to generate the pre-training dataset for the listener starting from the contexts, run:

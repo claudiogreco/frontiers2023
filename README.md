@@ -78,9 +78,15 @@ streamlit run visualize_interactions.py
 The app will run a local HTTP server showing an interface to visualize the reports contained in "data/reports".
 
 ### Context generation
-In order to generate the contexts, execute the following instructions:
-1. Run the "data/preprocess/extract_features.py" script
-2. Run the "generate_contexts.py" script
+In order to generate the features required to generate the contexts, run:
+```
+python data/preprocess/extract_features.py
+```
+
+After having generated the required features, in order to generate the contexts, run:
+```
+python generate_contexts.py
+```
 
 ### Listener pre-training
 In order to generate the pre-training dataset for the listener starting from the contexts, run:

@@ -56,19 +56,19 @@ python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER>
 where:
 - <SPEAKER_LOSS>:
   - fixed: no adaptation (Fixed model in the paper).
-  - likelihood: increases the likelihood of the generated caption if the listener guesses the correct target (LH model in the paper).
-  - rsa_likelihood: generates pragmatic captions incrementally keeping track of the wrong listener guesses and increases the likelihood of the generated caption if the listener guesses the correct target  (RSA LH model in the paper).
-  - rsa_likelihood_and_reset: generates pragmatic captions incrementally keeping track of the wrong listener guesses and resets the memory and increases the likelihood of the generated caption if the listener guesses the correct target (RSA LH-Reset model in the paper).
+  - likelihood: increases the likelihood of the generated caption if the listener guesses the correct target (LH model in the paper)
+  - rsa_likelihood: generates pragmatic captions incrementally keeping track of the wrong listener guesses and increases the likelihood of the generated caption if the listener guesses the correct target  (RSA LH model in the paper)
+  - rsa_likelihood_and_reset: generates pragmatic captions incrementally keeping track of the wrong listener guesses and resets the memory and increases the likelihood of the generated caption if the listener guesses the correct target (RSA LH-Reset model in the paper)
 - <SPEAKER_RESET_AFTER>:
-  - context: reset after each context.
-  - domain: reset after each domain.
+  - context: reset after each context
+  - domain: reset after each domain
 - <LISTENER_ENCODER_PATH>:
   - models/listener/layman_listener_encoder-5-2200.ckpt to use the encoder of the layman listener
   - models/listener/expert_listener_encoder-5-3000.pkl to use the encoder of the expert listener
 - <LISTENER_DECODER_PATH>:
   - models/listener/layman_listener_decoder-5-2200.ckpt to use the decoder of the layman listener
   - models/listener/expert_listener_decoder-5-3000.pkl to use the decoder of the expert listener
-- <REPORT_PATH>: path of the generated report.
+- <REPORT_PATH>: path of the generated report
 
 ### Visualization of speaker adaptation
 In order to visualize the speaker adaptation during the different interactions, run:

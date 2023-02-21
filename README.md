@@ -51,7 +51,7 @@ The data used to pre-train the layman listener is contained in the file "data/pr
 ### Interactive setup
 In order to run the interactive setup, run:
 ```
-python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> --listener_encoder_path=<LISTENER_ENCODER_PATH> --listener_decoder_path=<LISTENER_DECODER_PATH> --report_path=<REPORT_PATH> speaker_adaptation_to_listener_rsa.py.py: script to run the interactive setup between speaker and listener where the weights of the speaker model are reinitialized after each context.
+python --speaker_loss=<SPEAKER_LOSS> --speaker_reset_after=<SPEAKER_RESET_AFTER> --listener_encoder_path=<LISTENER_ENCODER_PATH> --listener_decoder_path=<LISTENER_DECODER_PATH> --report_path=<REPORT_PATH> speaker_adaptation_to_listener_rsa.py
 ```
 where:
 - <SPEAKER_LOSS>:

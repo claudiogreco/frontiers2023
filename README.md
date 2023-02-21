@@ -75,7 +75,7 @@ In order to visualize the speaker adaptation during the different interactions, 
 ```
 streamlit run visualize_interactions.py
 ```
-The app will run a local HTTP server showing an interface to visualize the reports contained in "data/reports".
+The app will run a local HTTP server showing an interface to visualize the reports contained in the folder "data/reports".
 
 ### Context generation
 In order to generate the features required to generate the contexts, run:

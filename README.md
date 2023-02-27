@@ -3,12 +3,7 @@ Source code related to: Greco C., Bagade D., Le T. D., Bernardi R. (2023) She ad
 
 Please, cite:
 ```
-Greco C, Bagade D, Le D-T and Bernardi R
-(2023) She adapts to her student: An expert
-pragmatic speaker tailoring her referring
-expressions to the Layman listener.
-Front. Artif. Intell. 6:1017204.
-doi: 10.3389/frai.2023.1017204
+Greco C, Bagade D, Le D-T and Bernardi R (2023) She adapts to her student: An expert pragmatic speaker tailoring her referring expressions to the Layman listener. Front. Artif. Intell. 6:1017204. doi: 10.3389/frai.2023.1017204
 ```
 
 ## Abstract

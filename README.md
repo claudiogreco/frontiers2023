@@ -1,5 +1,5 @@
 # frontiers2023
-Source code related to: Greco C., Bagade D., Le T. D., Bernardi R. (2023) She adapts to her student: An expert pragmatic speaker tailoring her referring expressions to the layman listener. In: Frontiers 2023.
+Source code related to: Greco C., Bagade D., Le T. D., Bernardi R. (2023) She adapts to her student: An expert pragmatic speaker tailoring her referring expressions to the layman listener. In: Frontiers 2023. (https://doi.org/10.3389/frai.2023.1017204)
 
 Please, cite:
 ```

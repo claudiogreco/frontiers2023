@@ -49,6 +49,7 @@ Execute the following instructions:
 1. Download the data (contexts, listener pre-training data, and pre-trained models) from the following link:
 https://drive.google.com/drive/folders/1bdtpM48TUntsZPfJwqUidGkll_EliE16?usp=sharing
 (The data can also be downloaded by installing gdown (pip install gdown) and running gdown 12CUXJF-d_8uRtW5FhCmRQCGvqUoseXiL)
+Alternatively, you can download data from Zenodo at the link: https://zenodo.org/record/7750153#.ZCawqS9By9k
 2. Place the downloaded "data" folder in the root directory of the repository
 3. Run the command wget http://images.cocodataset.org/zips/val2014.zip
 4. Extract the files in the "val2014.zip" archive to the "data/preprocess/val2014" folder
